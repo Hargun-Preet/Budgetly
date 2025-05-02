@@ -22,6 +22,7 @@ import { toast } from 'sonner';
 import { useTheme } from 'next-themes';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
+
 interface Props {
     type: TransactionType;
     successCallback: (category: Category) => void;
@@ -71,7 +72,7 @@ function CreateCategoryDialog({type, successCallback, trigger, mode = 'create', 
 
             successCallback(data);
 
-            //toast.dismiss(mode === 'create' ? 'create-category' : 'update-category');
+            toast.dismiss(mode === 'create' ? 'create-category' : 'update-category');
             await queryClient.invalidateQueries({
                 queryKey: ["categories"],
             });

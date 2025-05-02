@@ -1,12 +1,12 @@
+import { TransactionType } from "@/lib/types";
 import { z } from "zod";
 
 export const CreateCategorySchema = z.object({
     name: z.string().min(3).max(20),
     icon: z.string().max(20),
-    type: z.enum(["income", "expense"]),
+    type: z.enum(["income", "expense"]) as z.ZodType<TransactionType>,
     budget: z.number().optional().nullable(),
     budgetType: z.enum(["monthly", "yearly"]).optional(),
-    oldName: z.string().optional(), 
 }).refine((data) => {
     // If budget is set, budgetType must also be set
     if (data.budget && !data.budgetType) {
@@ -22,6 +22,11 @@ export const CreateCategorySchema = z.object({
 });
 
 export type CreateCategorySchemaType = z.infer<typeof CreateCategorySchema>;
+
+// Combine id and form data into a single schema for update
+export const UpdateCategorySchema = CreateCategorySchema;
+
+export type UpdateCategorySchemaType = z.infer<typeof UpdateCategorySchema>;
 
 export const DeleteCategorySchema = z.object({
     name: z.string().min(3).max(20),
