@@ -14,3 +14,11 @@ export interface Category {
     used: number | null;
     lastReset: Date | null;
 }
+
+export interface SerializedUser {
+  id: string;
+  firstName: string | null;
+  lastName: string | null;
+  imageUrl: string;
+  emailAddress: string;
+}

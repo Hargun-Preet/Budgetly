@@ -19,15 +19,15 @@ model UserSettings {
 }
 
 model Category {
-  createdAt DateTime @default(now())
-  name      String
-  userId    String
-  icon      String
-  type      String   @default("income")
-  budget      Float?   // Budget amount
-  budgetType  String?  @default("monthly") // "monthly" or "yearly"
-  used        Float?   // Amount used from budget
-  lastReset   DateTime? // Track when budget was last reset
+  createdAt  DateTime  @default(now())
+  name       String
+  userId     String
+  icon       String
+  type       String    @default("income")
+  budget     Float? // Budget amount
+  budgetType String?   @default("monthly") // "monthly" or "yearly"
+  used       Float? // Amount used from budget
+  lastReset  DateTime? // Track when budget was last reset
 
   @@unique([name, userId, type])
 }
@@ -47,7 +47,7 @@ model Transaction {
 }
 
 model MonthHistory {
-  userId String
+  userId  String
   day     Int
   month   Int
   year    Int
@@ -58,13 +58,11 @@ model MonthHistory {
 }
 
 model YearHistory {
-  userId   String
-  month    Int
-  year     Int
-  income   Float
-  expense  Float
+  userId  String
+  month   Int
+  year    Int
+  income  Float
+  expense Float
 
   @@id([month, year, userId])
 }
-
-

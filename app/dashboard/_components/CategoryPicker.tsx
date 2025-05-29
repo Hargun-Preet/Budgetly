@@ -13,17 +13,25 @@ import { cn } from '@/lib/utils';
 
 interface Props {
     type: TransactionType;
+    value?: string; // Add this
     onChange: (value: string, category: Category) => void;
 }
 
-function CategoryPicker({type, onChange} : Props) {
+function CategoryPicker({type, value: externalValue, onChange} : Props) {
     const [open, setOpen] = React.useState(false);
-    const [value, setValue] = React.useState("");
+    const [value, setValue] = React.useState(externalValue || "");
 
     const categoriesQuery = useQuery({
         queryKey: ["categories", type],
         queryFn: () => fetch(`/api/categories?type=${type}`).then((res) => res.json()),
     });
+
+    // Sync with external value
+    useEffect(() => {
+        if (externalValue) {
+            setValue(externalValue);
+        }
+    }, [externalValue]);
 
     const selectedCategory = categoriesQuery.data?.find(
         (category: Category) => category.name === value

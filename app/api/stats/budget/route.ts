@@ -13,8 +13,9 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const from = searchParams.get("from");
   const to = searchParams.get("to");
+  const budgetType = searchParams.get("budgetType");
 
-  const queryParams = OverviewQuerySchema.safeParse({ from, to });
+  const queryParams = OverviewQuerySchema.safeParse({ from, to, budgetType: budgetType || undefined  });
   if (!queryParams.success) {
     throw new Error(queryParams.error.message);
   }
@@ -46,6 +47,19 @@ async function getBudgetStats(userId: string, from: Date, to: Date) {
   // (Note: since there's no relation between Category and Transaction, we match on category name.)
   const stats = await Promise.all(
     categories.map(async (cat) => {
+      let queryFrom = from;
+      let queryTo = to;
+      const now = new Date();
+
+      // For yearly budgets, use start of year to current date
+      if (cat.budgetType === "yearly") {
+        queryFrom = new Date(from.getFullYear(), 0, 1); // January 1st
+        queryTo = to;
+      } else {
+        // For monthly budgets, use the provided date range
+        queryFrom = from;
+        queryTo = to;
+      }
       const transactions = await prisma.transaction.aggregate({
         _sum: {
           amount: true,
@@ -55,8 +69,8 @@ async function getBudgetStats(userId: string, from: Date, to: Date) {
           type: "expense",
           category: cat.name,
           date: {
-            gte: from,
-            lte: to,
+            gte: queryFrom,
+            lte: queryTo,
           },
         },
       });
@@ -66,6 +80,7 @@ async function getBudgetStats(userId: string, from: Date, to: Date) {
         categoryIcon: cat.icon,
         budget: cat.budget || 0,
         used: transactions._sum.amount || 0,
+        budgetType: cat.budgetType,
       };
     })
   );

@@ -10,11 +10,20 @@ import StatsCards from './StatsCards';
 import CategoriesStats from './CategoriesStats';
 import BudgetStats from './BudgetStats';
 
-function Overview({userSettings} : {userSettings: UserSettings}) {
-    const [dateRange, setDateRange] = useState<{from: Date; to: Date}> ({
-        from: startOfMonth(new Date()),
-        to: new Date(),
-    });
+interface OverviewProps {
+  userSettings: UserSettings;
+  dateRange: {
+    from: Date;
+    to: Date;
+  };
+  onDateRangeChange: (range: { from: Date; to: Date }) => void;
+}
+
+function Overview({ userSettings, dateRange, onDateRangeChange }: OverviewProps) {
+    // const [dateRange, setDateRange] = useState<{from: Date; to: Date}> ({
+    //     from: startOfMonth(new Date()),
+    //     to: new Date(),
+    // });
 
 
   return (
@@ -39,7 +48,7 @@ function Overview({userSettings} : {userSettings: UserSettings}) {
                     return;
                 }
 
-                setDateRange({from, to});
+                onDateRangeChange({from, to});
             }}/>
         </div>
       </div>

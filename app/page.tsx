@@ -6,7 +6,7 @@ import { LampComponent } from "@/components/global/lamp";
 import Navbar from "@/components/global/navbar";
 import { Button } from "@/components/ui/button";
 import { clients, products } from "@/lib/constant";
-import { CheckIcon } from "lucide-react";
+import { CheckIcon, Sparkles } from "lucide-react";
 import Image from "next/image";
 import Footer from "@/components/global/Footer";
 
@@ -48,52 +48,35 @@ export default function Home() {
       </section>
       <section className="mt-[-500px]">
         <LampComponent />
-        <div className="flex flex-wrap items-center justify-center flex-col md:flex-row gap-8 md:p-20 -mt-72">
+        <div className="flex flex-wrap items-center justify-center flex-col md:flex-row gap-20 md:p-20 -mt-72">
           <CardContainer className="inter-var ">
             <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-neutral-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full md:!w-[350px] h-auto rounded-xl p-6 border">
               <CardItem
                 translateZ="50"
                 className="text-xl font-bold text-neutral-600 dark:text-white "
               >
-                Hobby
-                <h2 className="text-6xl ">$0</h2>
+                
+                <h2 className="text-3xl text-center">Smart Expense Tracking</h2>
               </CardItem>
               <CardItem
                 translateZ="60"
                 className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
               >
-                Get a glimpse of what our software is capable of. Just a heads
-                up {"you'll"} never leave us after this!
+                Automatically categorize your expenses, track them in real-time, and get weekly insights on your spending habits.
                 <ul className="my-4 flex flex-col gap-2">
                   <li className="flex items-center gap-2">
-                    <CheckIcon />3 Free automations
+                    <CheckIcon />Auto-categorization of expenses
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckIcon />
-                    100 tasks per month
+                    Real-time sync
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckIcon />
-                    Two-step Actions
+                    Weekly insights & summaries
                   </li>
                 </ul>
               </CardItem>
-              <div className="flex justify-between items-center mt-8">
-                <CardItem
-                  translateZ={20}
-                  as="button"
-                  className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
-                >
-                  Try now →
-                </CardItem>
-                <CardItem
-                  translateZ={20}
-                  as="button"
-                  className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
-                >
-                  Get Started Now
-                </CardItem>
-              </div>
             </CardBody>
           </CardContainer>
           <CardContainer className="inter-var ">
@@ -102,45 +85,27 @@ export default function Home() {
                 translateZ="50"
                 className="text-xl font-bold text-neutral-600 dark:text-white "
               >
-                Pro Plan
-                <h2 className="text-6xl ">$29</h2>
+                <h2 className="text-3xl text-center">Interactive Dashboards</h2>
               </CardItem>
               <CardItem
                 translateZ="60"
                 className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
               >
-                Get a glimpse of what our software is capable of. Just a heads
-                up {"you'll"} never leave us after this!
+                  Visualize your financial data through stunning graphs and charts to understand your finances at a glance.
                 <ul className="my-4 flex flex-col gap-2">
                   <li className="flex items-center gap-2">
-                    <CheckIcon />3 Free automations
+                    <CheckIcon />Category-wise income & expenditure breakdown with bar & pie charts
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckIcon />
-                    100 tasks per month
+                    Budget progress tracking
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckIcon />
-                    Two-step Actions
+                    Monthly/yearly history with bar charts & tooltips
                   </li>
                 </ul>
               </CardItem>
-              <div className="flex justify-between items-center mt-8">
-                <CardItem
-                  translateZ={20}
-                  as="button"
-                  className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
-                >
-                  Try now →
-                </CardItem>
-                <CardItem
-                  translateZ={20}
-                  as="button"
-                  className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
-                >
-                  Get Started Now
-                </CardItem>
-              </div>
             </CardBody>
           </CardContainer>
           <CardContainer className="inter-var ">
@@ -149,45 +114,27 @@ export default function Home() {
                 translateZ="50"
                 className="text-xl font-bold text-neutral-600 dark:text-white "
               >
-                Unlimited
-                <h2 className="text-6xl ">$99</h2>
+                <h2 className="text-3xl text-center">Efficient Budget Planning</h2>
               </CardItem>
               <CardItem
                 translateZ="60"
                 className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
               >
-                Get a glimpse of what our software is capable of. Just a heads
-                up {"you'll"} never leave us after this!
+                  Set monthly budgets for categories and stay on top of your financial goals with smart recommendations.
                 <ul className="my-4 flex flex-col gap-2">
                   <li className="flex items-center gap-2">
-                    <CheckIcon />3 Free automations
+                    <CheckIcon />Set and edit monthly or yearly limits
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckIcon />
-                    100 tasks per month
+                    Color based limit visualisations
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckIcon />
-                    Two-step Actions
+                    Alerts when nearing limits
                   </li>
                 </ul>
               </CardItem>
-              <div className="flex justify-between items-center mt-8">
-                <CardItem
-                  translateZ={20}
-                  as="button"
-                  className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
-                >
-                  Try now →
-                </CardItem>
-                <CardItem
-                  translateZ={20}
-                  as="button"
-                  className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
-                >
-                  Get Started Now
-                </CardItem>
-              </div>
             </CardBody>
           </CardContainer>
           <CardContainer className="inter-var ">
@@ -196,139 +143,86 @@ export default function Home() {
                 translateZ="50"
                 className="text-xl font-bold text-neutral-600 dark:text-white "
               >
-                Pro Plan
-                <h2 className="text-6xl ">$29</h2>
+                
+                <h2 className="text-3xl text-center">Powerful & Secure Transactions</h2>
               </CardItem>
               <CardItem
                 translateZ="60"
                 className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
               >
-                Get a glimpse of what our software is capable of. Just a heads
-                up {"you'll"} never leave us after this!
+                Create, manage, and track your transactions with full control and bulletproof privacy.
                 <ul className="my-4 flex flex-col gap-2">
                   <li className="flex items-center gap-2">
-                    <CheckIcon />3 Free automations
+                    <CheckIcon />Add transactions with description, amount, category & date
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckIcon />
-                    100 tasks per month
+                    Create categories with custom name, icon, type, and budget
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckIcon />
-                    Two-step Actions
+                    End-to-end encrypted with UTC-based timestamping
                   </li>
                 </ul>
               </CardItem>
-              <div className="flex justify-between items-center mt-8">
-                <CardItem
-                  translateZ={20}
-                  as="button"
-                  className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
-                >
-                  Try now →
-                </CardItem>
-                <CardItem
-                  translateZ={20}
-                  as="button"
-                  className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
-                >
-                  Get Started Now
-                </CardItem>
-              </div>
             </CardBody>
           </CardContainer>
-          <CardContainer className="inter-var ">
-            <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-neutral-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full md:!w-[350px] h-auto rounded-xl p-6 border">
+          <CardContainer className="inter-var">
+            <CardBody className="relative group/card w-full md:!w-[350px] h-auto rounded-xl p-6 border border-black/[0.1] dark:border-white/[0.2] bg-gradient-to-br from-pink-500 via-purple-500 to-blue-500 text-white dark:text-white shadow-md hover:shadow-2xl transition-all duration-300">
               <CardItem
                 translateZ="50"
-                className="text-xl font-bold text-neutral-600 dark:text-white "
+                className="text-xl font-bold flex items-center gap-2 mb-2"
               >
-                Unlimited
-                <h2 className="text-6xl ">$99</h2>
+                <Sparkles className="w-8 h-8" />
+                <h2 className="text-3xl font-semibold">AI Receipt Scan</h2>
               </CardItem>
               <CardItem
                 translateZ="60"
-                className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+                className="text-sm max-w-sm mt-2"
               >
-                Get a glimpse of what our software is capable of. Just a heads
-                up {"you'll"} never leave us after this!
+                Let AI do the heavy lifting—just upload your receipt, and the system intelligently extracts and organizes transaction details for you. No more manual data entry.
                 <ul className="my-4 flex flex-col gap-2">
                   <li className="flex items-center gap-2">
-                    <CheckIcon />3 Free automations
+                    <CheckIcon /> Smart OCR extracts amount, date, category, and description
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckIcon />
-                    100 tasks per month
+                    <CheckIcon /> Auto-assigns categories based on past patterns
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckIcon />
-                    Two-step Actions
+                    <CheckIcon /> Supports image and PDF uploads with high accuracy
                   </li>
                 </ul>
               </CardItem>
-              <div className="flex justify-between items-center mt-8">
-                <CardItem
-                  translateZ={20}
-                  as="button"
-                  className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
-                >
-                  Try now →
-                </CardItem>
-                <CardItem
-                  translateZ={20}
-                  as="button"
-                  className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
-                >
-                  Get Started Now
-                </CardItem>
-              </div>
             </CardBody>
           </CardContainer>
+
           <CardContainer className="inter-var ">
             <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-neutral-500/[0.1] dark:bg-black dark:border-[#E2CBFF] border-black/[0.1] w-full md:!w-[350px] h-auto rounded-xl p-6 border">
               <CardItem
                 translateZ="50"
                 className="text-xl font-bold text-neutral-600 dark:text-white "
               >
-                Pro Plan
-                <h2 className="text-6xl ">$29</h2>
+                <h2 className="text-3xl text-center">Full Control over your Utilities</h2>
               </CardItem>
               <CardItem
                 translateZ="60"
                 className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
               >
-                Get a glimpse of what our software is capable of. Just a heads
-                up {"you'll"} never leave us after this!
+                All the features you need to manage your budget with flexibility and precision.
                 <ul className="my-4 flex flex-col gap-2">
                   <li className="flex items-center gap-2">
-                    <CheckIcon />3 Free automations
+                    <CheckIcon />Edit/delete your transactions and categories
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckIcon />
-                    100 tasks per month
+                    Export transactions data as CSV with selective filtering
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckIcon />
-                    Two-step Actions
+                    Date range picker for transactions & currency toggle
                   </li>
                 </ul>
               </CardItem>
-              <div className="flex justify-between items-center mt-8">
-                <CardItem
-                  translateZ={20}
-                  as="button"
-                  className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
-                >
-                  Try now →
-                </CardItem>
-                <CardItem
-                  translateZ={20}
-                  as="button"
-                  className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
-                >
-                  Get Started Now
-                </CardItem>
-              </div>
             </CardBody>
           </CardContainer>
           
