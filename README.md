@@ -29,7 +29,6 @@
 | **Auth**       | Clerk |
 | **Data Fetch** | React Query (TanStack Query) |
 | **Validation** | Zod |
-| **Icons**      | Lucide Icons |
 | **Deployment** | Vercel (Frontend), Railway (Backend) |
 
 ---
@@ -53,7 +52,7 @@ expense-tracker/
 
 ### 🔧 Prerequisites
 - **Node.js** (v18+)
-- **PostgreSQL** database
+- **MySQL/PostgreSQL** database
 - **Clerk account** for authentication
 - **Vercel account** (optional, for deployment)
 - **Railway account** (optional, for deployment)
@@ -63,17 +62,18 @@ expense-tracker/
 ### 🐣 Backend Setup
 1. Clone the repository:
    ```
-   git clone https://github.com/your-username/budgetly.git
-   cd budgetly
+   git clone https://github.com/Hargun-Preet/Budgetly.git
+   cd Budgetly
    ```
-2. Go to the prisma/ directory and configure your DATABASE_URL in .env.local:
+2. Create a database in your system and configure your DATABASE_URL in .env.local:
 ```
-DATABASE_URL=postgresql://username:password@your-railway-url/dbname
+DATABASE_URL="mysql://<admin-name, like root>:<password>@localhost:3306/<database-name>"
 ```
 3. Run migrations:
 ```
 npx prisma migrate dev
 ```
+You can now view the database in your command prompt (MySQL) or from Prisma ORM on https://localhost:3306
 ## 🎨 Frontend Setup
 1. Go to the app directory:
 ```
@@ -87,6 +87,14 @@ npm install
 ```
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=<your-clerk-key>
 NEXT_PUBLIC_API_URL=http://localhost:3000/api
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/wizard
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/dashboard 
+NEXT_PUBLIC_CLERK_SIGN_IN_FALLBACK_REDIRECT_URL=/
+NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL=/wizard
+
+GEMINI_API_KEY=<your-gemini-api-key>
 ```
 4. Start the app:
 ```
